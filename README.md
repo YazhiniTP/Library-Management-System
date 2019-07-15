@@ -20,14 +20,14 @@ Screens:
 
 •	Used masked textboxes for password and phone number field
 
-•	Implemented shortcuts as 
-    1. Search - Alt + S
-    2. Advanced search - Alt + A
-    3. Issue book - Alt + I
-    4. Return book - Alt + T
-    5. Book maintenance - Alt + B
-    6. Member maintenance - Alt + M
-    7. Reports - Alt + R
+•	Implemented shortcuts as   
+  1.	Search - Alt + S
+  2.	Advanced search - Alt + A
+  3.	Issue book - Alt + I
+  4.	Return book - Alt + T
+  5.	Book maintenance - Alt + B
+  6.	Member maintenance - Alt + M
+  7.	Reports - Alt + R
 
 •	We have also incorporated exception handling in our design to make robust. 
 
