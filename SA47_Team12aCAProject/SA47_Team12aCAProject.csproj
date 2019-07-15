@@ -1,0 +1,296 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3501CA4D-2FEE-4E96-841E-2BF9C92248BC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>SA47_Team12aCAProject</RootNamespace>
+    <AssemblyName>SA47_Team12aCAProject</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Author.cs">
+      <DependentUpon>SA47_Team12bModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="AuthorBrowse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AuthorBrowse.Designer.cs">
+      <DependentUpon>AuthorBrowse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Book.cs">
+      <DependentUpon>SA47_Team12bModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BookBrowse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BookBrowse.Designer.cs">
+      <DependentUpon>BookBrowse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CRBorrowerDemographic.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRBorrowerDemographic.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CRAvailableStocks.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRAvailableStocks.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CRMonthlyStats.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRMonthlyStats.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CRTransactionHistory.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CRTransactionHistory.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Employee.cs">
+      <DependentUpon>SA47_Team12bModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeMaster.cs">
+      <DependentUpon>SA47_Team12bModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Interface.cs" />
+    <Compile Include="IssueTran.cs">
+      <DependentUpon>SA47_Team12bModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryMenus.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LibraryMenus.Designer.cs">
+      <DependentUpon>LibraryMenus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LibraryLogin.Designer.cs">
+      <DependentUpon>LibraryLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LibraryLogout.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LibraryLogout.Designer.cs">
+      <DependentUpon>LibraryLogout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Member.cs">
+      <DependentUpon>SA47_Team12bModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MemberBrowse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MemberBrowse.Designer.cs">
+      <DependentUpon>MemberBrowse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReportAvailableStocks.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportAvailableStocks.Designer.cs">
+      <DependentUpon>ReportAvailableStocks.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportBorrowersDemographic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportBorrowersDemographic.Designer.cs">
+      <DependentUpon>ReportBorrowersDemographic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportMonthlyStats.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportMonthlyStats.Designer.cs">
+      <DependentUpon>ReportMonthlyStats.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportTransactionHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ReportTransactionHistory.Designer.cs">
+      <DependentUpon>ReportTransactionHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SA47_Team12bDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SA47_Team12bDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SA47_Team12bModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SA47_Team12bModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SA47_Team12bModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SA47_Team12bModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SA47_Team12bModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SA47_Team12bModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="StockAdjustment.cs">
+      <DependentUpon>SA47_Team12bModel.tt</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AuthorBrowse.resx">
+      <DependentUpon>AuthorBrowse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="BookBrowse.resx">
+      <DependentUpon>BookBrowse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRBorrowerDemographic.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRBorrowerDemographic.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRAvailableStocks.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRAvailableStocks.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRMonthlyStats.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRMonthlyStats.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CRTransactionHistory.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CRTransactionHistory.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LibraryMenus.resx">
+      <DependentUpon>LibraryMenus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LibraryLogin.resx">
+      <DependentUpon>LibraryLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LibraryLogout.resx">
+      <DependentUpon>LibraryLogout.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MemberBrowse.resx">
+      <DependentUpon>MemberBrowse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="ReportAvailableStocks.resx">
+      <DependentUpon>ReportAvailableStocks.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportBorrowersDemographic.resx">
+      <DependentUpon>ReportBorrowersDemographic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportMonthlyStats.resx">
+      <DependentUpon>ReportMonthlyStats.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportTransactionHistory.resx">
+      <DependentUpon>ReportTransactionHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EntityDeploy Include="SA47_Team12bModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>SA47_Team12bModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="SA47_Team12bDataSet.xsc">
+      <DependentUpon>SA47_Team12bDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SA47_Team12bDataSet.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>SA47_Team12bDataSet.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="SA47_Team12bDataSet.xss">
+      <DependentUpon>SA47_Team12bDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="SA47_Team12bModel.edmx.diagram">
+      <DependentUpon>SA47_Team12bModel.edmx</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SA47_Team12bModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>SA47_Team12bModel.Context.cs</LastGenOutput>
+      <DependentUpon>SA47_Team12bModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="SA47_Team12bModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SA47_Team12bModel.edmx</DependentUpon>
+      <LastGenOutput>SA47_Team12bModel.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

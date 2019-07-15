@@ -1,0 +1,166 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SA47_Team12aCADatabaseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Author">
+    <Key>
+      <PropertyRef Name="AuthorName" />
+    </Key>
+    <Property Name="AuthorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Country" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Books" Relationship="Self.FK_Books_Authors" FromRole="Authors" ToRole="Books" />
+  </EntityType>
+  <EntityType Name="Book">
+    <Key>
+      <PropertyRef Name="BookID" />
+    </Key>
+    <Property Name="BookID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BookTitle" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BookType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AuthorName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Publisher" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TotalStock" Type="Int32" />
+    <Property Name="NumberRented" Type="Int32" />
+    <NavigationProperty Name="Author" Relationship="Self.FK_Books_Authors" FromRole="Books" ToRole="Authors" />
+    <NavigationProperty Name="IssueTrans" Relationship="Self.FK_IssueTrans_Members" FromRole="Books" ToRole="IssueTrans" />
+    <NavigationProperty Name="StockAdjustments" Relationship="Self.FK_StockAdjustment_Books" FromRole="Books" ToRole="StockAdjustment" />
+  </EntityType>
+  <EntityType Name="EmployeeMaster">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Login" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Employee" Relationship="Self.FK_EmployeeMaster_Employees" FromRole="EmployeeMaster" ToRole="Employees" />
+  </EntityType>
+  <EntityType Name="Employee">
+    <Key>
+      <PropertyRef Name="EmployeeID" />
+    </Key>
+    <Property Name="EmployeeID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ContactTitle" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="Int32" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="EmailAddress" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Salary" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="Notes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="EmployeeMaster" Relationship="Self.FK_EmployeeMaster_Employees" FromRole="Employees" ToRole="EmployeeMaster" />
+  </EntityType>
+  <EntityType Name="IssueTran">
+    <Key>
+      <PropertyRef Name="TransactionID" />
+    </Key>
+    <Property Name="TransactionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MemberID" Type="Int32" />
+    <Property Name="BookID" Type="Int32" />
+    <Property Name="IssueDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DueDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="ActualReturnDate" Type="DateTime" Precision="3" />
+    <Property Name="Status" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="FineAmount" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="Remarks" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Book" Relationship="Self.FK_IssueTrans_Members" FromRole="IssueTrans" ToRole="Books" />
+  </EntityType>
+  <EntityType Name="Member">
+    <Key>
+      <PropertyRef Name="MemberID" />
+    </Key>
+    <Property Name="MemberID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MemberName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="ContactTitle" Type="String" MaxLength="5" FixedLength="false" Unicode="true" />
+    <Property Name="Age" Type="Int32" />
+    <Property Name="Address" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="9" FixedLength="false" Unicode="true" />
+    <Property Name="EmailAddress" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Country" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="BooksCurrentlyBorrowed" Type="Int32" />
+    <Property Name="FineAmt" Type="Decimal" Precision="8" Scale="2" />
+    <Property Name="Notes" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="StockAdjustment">
+    <Key>
+      <PropertyRef Name="StockAdjTransactionID" />
+    </Key>
+    <Property Name="StockAdjTransactionID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="BookID" Type="Int32" />
+    <Property Name="Adjustment_Quantity" Type="Int32" />
+    <Property Name="Status" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Date_Adjusted" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Book" Relationship="Self.FK_StockAdjustment_Books" FromRole="StockAdjustment" ToRole="Books" />
+  </EntityType>
+  <Association Name="FK_Books_Authors">
+    <End Role="Authors" Type="Self.Author" Multiplicity="1" />
+    <End Role="Books" Type="Self.Book" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Authors">
+        <PropertyRef Name="AuthorName" />
+      </Principal>
+      <Dependent Role="Books">
+        <PropertyRef Name="AuthorName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_IssueTrans_Members">
+    <End Role="Books" Type="Self.Book" Multiplicity="0..1" />
+    <End Role="IssueTrans" Type="Self.IssueTran" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Books">
+        <PropertyRef Name="BookID" />
+      </Principal>
+      <Dependent Role="IssueTrans">
+        <PropertyRef Name="BookID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_StockAdjustment_Books">
+    <End Role="Books" Type="Self.Book" Multiplicity="0..1" />
+    <End Role="StockAdjustment" Type="Self.StockAdjustment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Books">
+        <PropertyRef Name="BookID" />
+      </Principal>
+      <Dependent Role="StockAdjustment">
+        <PropertyRef Name="BookID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_EmployeeMaster_Employees">
+    <End Role="Employees" Type="Self.Employee" Multiplicity="1" />
+    <End Role="EmployeeMaster" Type="Self.EmployeeMaster" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="Employees">
+        <PropertyRef Name="EmployeeID" />
+      </Principal>
+      <Dependent Role="EmployeeMaster">
+        <PropertyRef Name="EmployeeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SA47_Team12aCADatabaseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Authors" EntityType="Self.Author" />
+    <EntitySet Name="Books" EntityType="Self.Book" />
+    <EntitySet Name="EmployeeMasters" EntityType="Self.EmployeeMaster" />
+    <EntitySet Name="Employees" EntityType="Self.Employee" />
+    <EntitySet Name="IssueTrans" EntityType="Self.IssueTran" />
+    <EntitySet Name="Members" EntityType="Self.Member" />
+    <EntitySet Name="StockAdjustments" EntityType="Self.StockAdjustment" />
+    <AssociationSet Name="FK_Books_Authors" Association="Self.FK_Books_Authors">
+      <End Role="Authors" EntitySet="Authors" />
+      <End Role="Books" EntitySet="Books" />
+    </AssociationSet>
+    <AssociationSet Name="FK_IssueTrans_Members" Association="Self.FK_IssueTrans_Members">
+      <End Role="Books" EntitySet="Books" />
+      <End Role="IssueTrans" EntitySet="IssueTrans" />
+    </AssociationSet>
+    <AssociationSet Name="FK_StockAdjustment_Books" Association="Self.FK_StockAdjustment_Books">
+      <End Role="Books" EntitySet="Books" />
+      <End Role="StockAdjustment" EntitySet="StockAdjustments" />
+    </AssociationSet>
+    <AssociationSet Name="FK_EmployeeMaster_Employees" Association="Self.FK_EmployeeMaster_Employees">
+      <End Role="Employees" EntitySet="Employees" />
+      <End Role="EmployeeMaster" EntitySet="EmployeeMasters" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

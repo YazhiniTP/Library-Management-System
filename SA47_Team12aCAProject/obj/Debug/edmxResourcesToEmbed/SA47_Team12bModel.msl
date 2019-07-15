@@ -1,0 +1,94 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SA47_Team12aCADatabaseModelStoreContainer" CdmEntityContainer="SA47_Team12aCADatabaseEntities">
+    <EntitySetMapping Name="Authors">
+      <EntityTypeMapping TypeName="SA47_Team12aCADatabaseModel.Author">
+        <MappingFragment StoreEntitySet="Authors">
+          <ScalarProperty Name="AuthorName" ColumnName="AuthorName" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Books">
+      <EntityTypeMapping TypeName="SA47_Team12aCADatabaseModel.Book">
+        <MappingFragment StoreEntitySet="Books">
+          <ScalarProperty Name="BookID" ColumnName="BookID" />
+          <ScalarProperty Name="BookTitle" ColumnName="BookTitle" />
+          <ScalarProperty Name="BookType" ColumnName="BookType" />
+          <ScalarProperty Name="AuthorName" ColumnName="AuthorName" />
+          <ScalarProperty Name="Publisher" ColumnName="Publisher" />
+          <ScalarProperty Name="TotalStock" ColumnName="TotalStock" />
+          <ScalarProperty Name="NumberRented" ColumnName="NumberRented" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EmployeeMasters">
+      <EntityTypeMapping TypeName="SA47_Team12aCADatabaseModel.EmployeeMaster">
+        <MappingFragment StoreEntitySet="EmployeeMaster">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Employees">
+      <EntityTypeMapping TypeName="SA47_Team12aCADatabaseModel.Employee">
+        <MappingFragment StoreEntitySet="Employees">
+          <ScalarProperty Name="EmployeeID" ColumnName="EmployeeID" />
+          <ScalarProperty Name="EmployeeName" ColumnName="EmployeeName" />
+          <ScalarProperty Name="ContactTitle" ColumnName="ContactTitle" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="Salary" ColumnName="Salary" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IssueTrans">
+      <EntityTypeMapping TypeName="SA47_Team12aCADatabaseModel.IssueTran">
+        <MappingFragment StoreEntitySet="IssueTrans">
+          <ScalarProperty Name="TransactionID" ColumnName="TransactionID" />
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="BookID" ColumnName="BookID" />
+          <ScalarProperty Name="IssueDate" ColumnName="IssueDate" />
+          <ScalarProperty Name="DueDate" ColumnName="DueDate" />
+          <ScalarProperty Name="ActualReturnDate" ColumnName="ActualReturnDate" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="FineAmount" ColumnName="FineAmount" />
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Members">
+      <EntityTypeMapping TypeName="SA47_Team12aCADatabaseModel.Member">
+        <MappingFragment StoreEntitySet="Members">
+          <ScalarProperty Name="MemberID" ColumnName="MemberID" />
+          <ScalarProperty Name="MemberName" ColumnName="MemberName" />
+          <ScalarProperty Name="ContactTitle" ColumnName="ContactTitle" />
+          <ScalarProperty Name="Age" ColumnName="Age" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
+          <ScalarProperty Name="EmailAddress" ColumnName="EmailAddress" />
+          <ScalarProperty Name="Country" ColumnName="Country" />
+          <ScalarProperty Name="BooksCurrentlyBorrowed" ColumnName="BooksCurrentlyBorrowed" />
+          <ScalarProperty Name="FineAmt" ColumnName="FineAmt" />
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StockAdjustments">
+      <EntityTypeMapping TypeName="SA47_Team12aCADatabaseModel.StockAdjustment">
+        <MappingFragment StoreEntitySet="StockAdjustment">
+          <ScalarProperty Name="StockAdjTransactionID" ColumnName="StockAdjTransactionID" />
+          <ScalarProperty Name="BookID" ColumnName="BookID" />
+          <ScalarProperty Name="Adjustment_Quantity" ColumnName="Adjustment Quantity" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Date_Adjusted" ColumnName="Date Adjusted" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
