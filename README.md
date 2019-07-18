@@ -1,18 +1,21 @@
 # Library-Management-System
 Library Management System - a Client Server Based Enterprise Application using Visual C# and .NET framework.
 
-# About
+## About
 The library management system is aimed at helping the library staff in the daily routine jobs. Basic functions handled including search for book by single criteria, advanced search which display search results by various filters and only those books that are available to rent in the library, member registration, transactions of issuing and returning a book, maintenance of the book and member database.
 
 We have included two logins, guest and librarian. Guest can perform search and advanced search only. The librarian being the major user, can perform all functions. The system authenticates the identity of registered librarian by password upon login.
 
-# Assumption
+## Assumption
 The system is built considering a default borrowing period as 10 days and renew period as 5 days. 
 
-# Software Required
-The software required for running the program file is Microsoft Visual Studio .Net, SAP Crystal reports (64-bit) and Microsoft SQL Server Management Studio. For running SAP Crystal reports, .NET framework should be version 4.0 and above.
+## Technology & Tools
+1. ASP .Net application developed in .Net C# using Microsoft Visual Studio .Net
+2. SAP Crystal reports (64-bit) for Reports -> (.NET framework should be version 4.0 and above.)
+3. Microsoft SQL Server Management Studio as Persistence layer
+4. HTML, Bootstarp, CSS for Front-end
 
-# Brief Design of screens, entities and reports
+## Brief Design of screens, entities and reports
 Screens:
 •	We have tried to maximise the functionality of every screen, keeping in mind that a busy librarian is able to perform the job smoothly throughout the day.
 
@@ -43,7 +46,7 @@ Screens:
 
 •	The user will not be able to renew or return a book if the book status is IN.
 
-# Entities:  
+## Entities:  
 •	Implement database with primary and foreign keys
 
 •	Implemented check constraint in IssueTrans table for status as IN and OUT and in StockAdjustment table for status as ADD and REMOVE 
