@@ -17,6 +17,7 @@ The system is built considering a default borrowing period as 10 days and renew 
 
 ## Brief Design of screens, entities and reports
 Screens:
+
 •	We have tried to maximise the functionality of every screen, keeping in mind that a busy librarian is able to perform the job smoothly throughout the day.
 
 •	The design is interactive, messages are displayed to the user in case a search result is not found (please refer to any screen). Value added features like help provider, tool tips and progress bar to know the progress of the function  are an integral part of the design. 
